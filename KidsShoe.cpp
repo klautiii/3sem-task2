@@ -2,18 +2,18 @@
 #include <stdexcept>
 
 KidsShoe::KidsShoe(std::string article,
-    std::string model,
-    std::string style,
-    std::string color,
-    Season season,
-    double price,
-    std::string country,
-    std::map<int, int> pairsBySize,
-    int minAgeYears,
-    int maxAgeYears)
+    const std::string model,
+    const std::string style,
+    const std::string color,
+    const Season season,
+    const double price,
+    const std::string country,
+    const std::map<int, int> pairsBySize,
+    const int minAgeYears,
+    const int maxAgeYears)
     : Shoe(std::move(article), std::move(model), std::move(style), std::move(color),
         season, price, std::move(country), std::move(pairsBySize)),
-    minAgeYears_(minAgeYears),
+    const minAgeYears_(minAgeYears),
     maxAgeYears_(maxAgeYears) {
     if (minAgeYears_ < 0 || minAgeYears_ > maxAgeYears_) {
         throw std::invalid_argument("KidsShoe: некорректный диапазон возраста");
