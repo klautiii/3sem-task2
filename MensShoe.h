@@ -24,14 +24,14 @@ public:
      * @param closureType  Тип застёжки, например "шнурки".
      */
     MensShoe(std::string article,
-        std::string model,
-        std::string style,
-        std::string color,
-        Season season,
-        double price,
-        std::string country,
-        std::map<int, int> pairsBySize,
-        std::string closureType);
+        const std::string model,
+        const std::string style,
+        const std::string color,
+        const Season season,
+        const double price,
+        const std::string country,
+        const std::map<int, int> pairsBySize,
+        const std::string closureType);
 
     /** @brief Возвращает тип застёжки. */
     const std::string& GetClosureType() const;
