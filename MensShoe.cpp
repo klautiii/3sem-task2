@@ -1,14 +1,14 @@
 #include "MensShoe.h"
 
 MensShoe::MensShoe(std::string article,
-    std::string model,
-    std::string style,
-    std::string color,
-    Season season,
-    double price,
-    std::string country,
-    std::map<int, int> pairsBySize,
-    std::string closureType)
+    const std::string model,
+    const std::string style,
+    const std::string color,
+    const Season season,
+    const double price,
+    const std::string country,
+    const std::map<int, int> pairsBySize,
+    const std::string closureType)
     : Shoe(std::move(article), std::move(model), std::move(style), std::move(color),
         season, price, std::move(country), std::move(pairsBySize)),
     closureType_(std::move(closureType)) {
