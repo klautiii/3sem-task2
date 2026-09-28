@@ -3,21 +3,21 @@
 #include <stdexcept>
 
 Shoe::Shoe(std::string article,
-    std::string model,
-    std::string style,
-    std::string color,
-    Season season,
-    double price,
-    std::string country,
-    std::map<int, int> pairsBySize)
-    : article_(std::move(article)),
-    model_(std::move(model)),
-    style_(std::move(style)),
-    color_(std::move(color)),
-    season_(season),
-    price_(price),
-    country_(std::move(country)),
-    pairsBySize_(std::move(pairsBySize)) {
+    const std::string model,
+    const std::string style,
+    const std::string color,
+    const Season season,
+    const double price,
+    const std::string country,
+    const std::map<int, int> pairsBySize)
+    const : article_(std::move(article)),
+    const model_(std::move(model)),
+    const style_(std::move(style)),
+    const color_(std::move(color)),
+    const season_(season),
+    const  price_(price),
+    const country_(std::move(country)),
+    const pairsBySize_(std::move(pairsBySize)) {
     // Проверяем входные данные сразу, чтобы в магазине никогда не
     // оказалось обуви с некорректными значениями.
     if (article_.empty()) {
