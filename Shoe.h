@@ -43,13 +43,13 @@ public:
      *         отрицательное.
      */
     Shoe(std::string article,
-        std::string model,
-        std::string style,
-        std::string color,
-        Season season,
-        double price,
-        std::string country,
-        std::map<int, int> pairsBySize);
+        const std::string model,
+        const std::string style,
+        const std::string color,
+        const Season season,
+        const double price,
+        const std::string country,
+        const std::map<int, int> pairsBySize);
 
     /** @brief Виртуальный деструктор, необходим для полиморфных базовых классов. */
     virtual ~Shoe() = default;
@@ -124,15 +124,15 @@ protected:
     virtual std::string GetSpecificInfo() const = 0;
 
 private:
-    std::string article_;
-    std::string model_;
-    std::string style_;
-    std::string color_;
+    const std::string article_;
+    const std::string model_;
+    const std::string style_;
+    const std::string color_;
     // Инициализаторы по умолчанию - защита от забытого поля в будущем конструкторе.
-    Season season_ = Season::AllSeason;
-    double price_ = 0.0;
-    std::string country_;
-    std::map<int, int> pairsBySize_;
+    const Season season_ = Season::AllSeason;
+    const double price_ = 0.0;
+    const std::string country_;
+    const std::map<int, int> pairsBySize_;
 
     /** @brief Возвращает остатки в виде строки "40 - 2, 41 - 3" или "нет в наличии". */
     std::string GetStockInfo() const;
