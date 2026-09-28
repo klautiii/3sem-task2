@@ -21,20 +21,20 @@ namespace {
 }
 
 Sale::Sale(std::string article,
-    std::string model,
-    int size,
-    int quantity,
-    double unitPrice,
-    int discountPercent,
-    std::string cardNumber,
-    Date saleDate)
-    : article_(std::move(article)),
-    model_(std::move(model)),
-    size_(size),
-    quantity_(quantity),
-    unitPrice_(unitPrice),
-    discountPercent_(discountPercent),
-    cardNumber_(std::move(cardNumber)),
+    const std::string model,
+    const int size,
+    const int quantity,
+    const double unitPrice,
+    const int discountPercent,
+    const std::string cardNumber,
+    const Date saleDate)
+    const : article_(std::move(article)),
+    const model_(std::move(model)),
+    const size_(size),
+    const quantity_(quantity),
+    const unitPrice_(unitPrice),
+    const discountPercent_(discountPercent),
+    const cardNumber_(std::move(cardNumber)),
     saleDate_(saleDate) {
     if (quantity_ <= 0) {
         throw std::invalid_argument("Sale: количество пар должно быть больше нуля");
